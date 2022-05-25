@@ -1,14 +1,16 @@
 package com.example.priorityorganizer;
 
+import javafx.geometry.Bounds;
 import javafx.scene.Group;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Shape;
 
 public class RectangleGenerator extends ShapeGenerator{
     public RectangleGenerator(Group group){
 
     }
 
-    public void createShape(){
+    public void createShape(int size){
 
     }
 
@@ -21,7 +23,7 @@ public class RectangleGenerator extends ShapeGenerator{
     }
 
     @Override
-    public void getLocation(){
-
+    public Bounds getLocation(Shape shape){
+        return shape.getBoundsInLocal();
     }
 }

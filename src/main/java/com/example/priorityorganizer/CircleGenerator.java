@@ -1,8 +1,10 @@
 package com.example.priorityorganizer;
 
+import javafx.geometry.Bounds;
 import javafx.scene.Group;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.shape.Shape;
 
 public class CircleGenerator extends ShapeGenerator{
 
@@ -10,19 +12,23 @@ public class CircleGenerator extends ShapeGenerator{
 
     //use stackpane or borderpane for shape layout
 
+    //for loop oging through array to check locations where shape can't be put
+
+    //sort shapes by order of size
+
     public CircleGenerator(Group gro){
         group = gro;
     }
 
+    public void placeShape(){
 
-    public void createShape(int size){
+    }
+
+    @Override
+    public void createShape(int size) {
         Circle cir;
 
         group.getChildren();
-    }
-
-    public void placeShape(){
-
     }
 
     //see if shapes occupy the same space
@@ -34,7 +40,7 @@ public class CircleGenerator extends ShapeGenerator{
     }
 
     @Override
-    public void getLocation(){
-
+    public Bounds getLocation(Shape shape){
+        return shape.getBoundsInLocal();
     }
 }
