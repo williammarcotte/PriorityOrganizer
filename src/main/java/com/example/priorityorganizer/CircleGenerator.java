@@ -37,9 +37,7 @@ public class CircleGenerator extends ShapeGenerator{
 
         stack.getChildren().addAll(cir,tex);
 
-        cir.setCenterY(-50);
-
-        shapes.add(cir);
+        shapes.add(stack);
 
         group.getChildren().add(stack);
     }
@@ -49,10 +47,17 @@ public class CircleGenerator extends ShapeGenerator{
         return s1.getBoundsInLocal().intersects(s2.getBoundsInLocal());
     }
 
-    //undo shape creation
+    //undo last shape creation
     @Override
     public void undo(){
         group.getChildren().remove(shapes.pop());
+    }
+
+    @Override
+    public void clear(){
+        while(!shapes.isEmpty()){
+            this.undo();
+        }
     }
 
     //location of shape

@@ -40,6 +40,7 @@ public class HelloApplication extends Application {
         VBox vbox1 = new VBox();
         VBox vbox2 = new VBox();
         VBox vbox3 = new VBox();
+        VBox vbox4 = new VBox();
 
 
         Label l1 = new Label("Enter word:");
@@ -68,9 +69,21 @@ public class HelloApplication extends Application {
             }
         });
 
+        Button clear = new Button("Clear");
+        clear.setOnAction(new EventHandler<ActionEvent>()
+        {
+            @Override
+            public void handle(ActionEvent event)
+            {
+                gen.clear();
+            }
+        });
+
         vbox3.getChildren().add(addShape);
         vbox3.getChildren().add(undo);
         vbox3.setSpacing(10);
+
+        vbox4.getChildren().add(clear);
 
         hbox.setSpacing(100);
 
@@ -80,6 +93,7 @@ public class HelloApplication extends Application {
         hbox.getChildren().add(vbox1);
         hbox.getChildren().add(vbox2);
         hbox.getChildren().add(vbox3);
+        hbox.getChildren().add(vbox4);
 
 
 
