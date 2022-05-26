@@ -6,11 +6,13 @@ import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 public class RectangleGenerator extends ShapeGenerator{
-    public RectangleGenerator(Group group){
+    Group group = new Group();
 
+    public RectangleGenerator(Group group){
+        this.group = group;
     }
 
-    public void createShape(int size){
+    public void createShape(int size,String text){
 
     }
 
@@ -20,6 +22,11 @@ public class RectangleGenerator extends ShapeGenerator{
 
     public void hasOverlap(){
 
+    }
+
+    @Override
+    public void undo(){
+        group.getChildren().remove(shapes.pop());
     }
 
     @Override

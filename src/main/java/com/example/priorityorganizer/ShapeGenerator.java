@@ -14,7 +14,8 @@ public abstract class ShapeGenerator implements Location{
 
     ArrayDeque<Shape> shapes = new ArrayDeque<>();
 
+    public abstract  void undo();
     public abstract void placeShape();
-    public abstract void createShape(int size);
+    public abstract void createShape(int size,String text);
 }
 
